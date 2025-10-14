@@ -1,49 +1,25 @@
 const express = require('express');
 const posts = require('./data')
-
 const app = express();
+
 app.use(express.json());
 
-app.get('/posts', (req, res) => {
-    res.json(posts);
-})
+const { getPosts } = require('./controllers/posts')
+const { getPostByID } = require('./controllers/posts')
+const { postPost } = require('./controllers/posts')
+const { deletePost } = require('./controllers/posts')
 
-function validatePost(post){
-    if (3 <= post.title.length 
-        && post.title.length <= 120 
-        && post.content.length > 10 
-        && post.author.length > 0){
-        return true
-    }
-    return false
-}
+app.get('/posts', (req, res) => getPosts(req, res))
 
-app.post('/posts', (req, res) => {
-    newPost = req.body
-    if (validatePost(newPost)){
-        newPost.id = posts.length > 0 ? Math.max(...posts.map(t => t.id)) + 1 : 1
-        newPost.createdAt = (new Date).toISOString()
-        newPost.updatedAt = (new Date).toISOString()
-        newPost.published = false
-        posts.push(newPost)
-        }
-    else{
-        res.status(400).json({message: 'Invalid JSON'})
-        return
-    }
-    res.status(201).json(newPost)
-})
-app.get('/posts/:id', (req, res) =>{
-    const postID = parseInt(req.params.id)
-    const post = posts.find(t => t.id === postID)
+app.post('/posts', (req, res) => postPost(req, res))
 
-    if (!post){
-        res.status(404).json({message: 'Post not found'})
-    }
-    else{
-        res.status(201).json(post)
-    }
-})
+app.get('/posts/:id', (req, res) => getPostByID(req, res))
+
+app.delete('/posts/:id', (req, res) => deletePost(req, res))
+
+app.patch('/posts/:id/publish', (req, res) => patchPost(req, res))
+
+app.put('/posts/:id', (req, res) => putPost(req, res))
 
 app.listen(3001, () => {
     console.log('Server is running on http://localhost:3001')
