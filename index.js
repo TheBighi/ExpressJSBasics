@@ -5,9 +5,6 @@ const app = express();
 app.use(express.json());
 
 const { getPosts, getPostByID, postPost,putPost, patchPost, deletePost } = require('./controllers/posts')
-const { getPostByID } = require('./controllers/posts')
-const { postPost } = require('./controllers/posts')
-const { deletePost } = require('./controllers/posts')
 
 app.get('/posts', (req, res) => getPosts(req, res))
 
