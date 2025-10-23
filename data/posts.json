@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Food",
+    "content": "Cool post about food and stuff",
+    "author": "Mina",
+    "published": true,
+    "createdAt": "2025-10-23T21:11:16.758Z",
+    "updatedAt": "2025-10-23T21:11:16.758Z"
+  },
+  {
+    "id": 2,
+    "title": "Up123",
+    "content": "Updated long content with more than ten characters.",
+    "author": "David Dow",
+    "published": true,
+    "createdAt": "2025-10-23T21:11:16.758Z",
+    "updatedAt": "2025-10-23T21:43:13.113Z"
+  },
+  {
+    "title": "123123",
+    "content": "123123123123",
+    "author": "Mina",
+    "published": false,
+    "id": 3,
+    "createdAt": "2025-10-23T21:43:10.311Z",
+    "updatedAt": "2025-10-23T21:43:10.311Z"
+  },
+  {
+    "title": "123123",
+    "content": "123123123123",
+    "author": "Mina",
+    "published": false,
+    "id": 4,
+    "createdAt": "2025-10-23T21:48:14.255Z",
+    "updatedAt": "2025-10-23T21:48:14.255Z"
+  },
+  {
+    "title": "123123",
+    "content": "123123123123",
+    "author": "Mina",
+    "published": false,
+    "id": 5,
+    "createdAt": "2025-10-23T21:49:27.022Z",
+    "updatedAt": "2025-10-23T21:49:27.023Z"
+  }
+]
