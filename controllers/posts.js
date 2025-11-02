@@ -1,5 +1,4 @@
-const { readFile } = require('../utils/files')
-const { writeFile } = require('../utils/files')
+const { readFile, writeFile } = require('../utils/files')
 
 function validatePost(post){
     if (3 <= post.title.length 
